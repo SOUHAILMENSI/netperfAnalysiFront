@@ -26,7 +26,6 @@ class BarChart extends Component {
             maintainAspectRatio: true,
               title: {
                 display: this.state.displayTitle,
-                //text: "Average Rxlevel- Cell ID ",
                 fontSize: 23,
 
               },
@@ -39,7 +38,7 @@ class BarChart extends Component {
               scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
                         
                     }
                 }]

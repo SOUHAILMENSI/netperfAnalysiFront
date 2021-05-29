@@ -1,5 +1,3 @@
-
-
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 
@@ -17,20 +15,28 @@ class LineChart extends Component {
   render() {
     return (
       <div className="linechart">
-      <Line
+        <Line
           data={this.state.chartData}
-         
           options={{
             responsive: true,
             maintainAspectRatio: true,
-          title: {
+            title: {
               display: this.state.displayTitle,
-              fontSize: 25
+              fontSize: 25,
             },
             legend: {
               display: this.state.displayLegend,
-              position: this.state.legendPosition
-            }
+              position: this.state.legendPosition,
+            },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
           }}
         />
       </div>

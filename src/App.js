@@ -6,9 +6,14 @@ import Login from './Login';
 import Dashboard from './Dashboard';
 import Home from './Home';
 
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicRoute from './Utils/PublicRoute';
 import { getToken, removeUserSession, setUserSession } from './Utils/Common';
+
+
 
 function App() {
   const [authLoading, setAuthLoading] = useState(true);
@@ -39,14 +44,16 @@ function App() {
         <div>
           <div className="content">
             <Switch>
-              <Route exact path="/" component={Home} exact="/dashboard" />
+              <PrivateRoute exact path="/" component={Home} />
               <PublicRoute path="/login" component={Login} />
               <PrivateRoute path="/dashboard" component={Dashboard} />
+              <PrivateRoute path="/dashboard2" component={Dashboard} />
+
             </Switch>
           </div>
         </div>
       </BrowserRouter>
-    </div>
+    </div> 
   );
 }
 

@@ -15,7 +15,7 @@ function Login(props) {
     axios.post('http://localhost:5000/users/signin', { username: username.value, password: password.value }).then(response => {
       setLoading(false);
       setUserSession(response.data.token, response.data.user);
-      props.history.push('/dashboard');
+      props.history.push('/');
     }).catch(error => {
       setLoading(false);
       if (error.response && error.response.status === 401) setError(error.response.data.message);
