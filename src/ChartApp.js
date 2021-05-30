@@ -64,6 +64,7 @@ function ChartApp() {
     let objUmts6 = {};
     let array1 = [];
     let array2 = [];
+    
     for (let i = 0; i < list.length; i++) {
       // LTE calculation
 
