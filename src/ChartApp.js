@@ -8,37 +8,12 @@ import Modal from "react-bootstrap/Modal";
 import { Form, Button } from "react-bootstrap";
 
 function ChartApp() {
-  const [value, setValue] = useState([]);
-  const [head, setHead] = useState([]);
-  const [value1, setValue1] = useState([]);
-  const [head1, setHead1] = useState([]);
   const [loading, setLoading] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
-  const [array1, setArray1] = useState([]);
-  const [array2, setArray2] = useState([]);
-  const [value2, setValue2] = useState([]);
-  const [head2, setHead2] = useState([]);
-  const [value3, setValue3] = useState([]);
-  const [head3, setHead3] = useState([]);
-  const [value4, setValue4] = useState([]);
-  const [head4, setHead4] = useState([]);
-  const [value5, setValue5] = useState([]);
-  const [head5, setHead5] = useState([]);
-  const [value6, setValue6] = useState([]);
-  const [head6, setHead6] = useState([]);
-  const [value7, setValue7] = useState([]);
-  const [head7, setHead7] = useState([]);
-  const [valueUmts1, setValueUmts1] = useState([]);
-  const [headUmts1, setHeadUmts1] = useState([]);
-  const [valueUmts2, setValueUmts2] = useState([]);
-  const [headUmts2, setHeadUmts2] = useState([]);
-  const [valueUmts3, setValueUmts3] = useState([]);
-  const [headUmts3, setHeadUmts3] = useState([]);
-  const [valueUmts4, setValueUmts4] = useState([]);
-  const [headUmts4, setHeadUmts4] = useState([]);
-  const [valueUmts5, setValueUmts5] = useState([]);
-  const [headUmts5, setHeadUmts5] = useState([]);
-  let [chartDisplay, setChartDisplay] = useState([]);
+
+  let [ltechartDisplay, setLteChartDisplay] = useState([]);
+  let [umtschartDisplay, setUmtsChartDisplay] = useState([]);
+  let [gsmchartDisplay, setGsmChartDisplay] = useState([]);
 
   // process CSV data
   const processData = (dataString) => {
@@ -80,11 +55,13 @@ function ChartApp() {
     let obj5 = {};
     let obj6 = {};
     let obj7 = {};
+    let obj8 = {};
     let objUmts1 = {};
     let objUmts2 = {};
     let objUmts3 = {};
     let objUmts4 = {};
     let objUmts5 = {};
+    let objUmts6 = {};
     let array1 = [];
     let array2 = [];
     for (let i = 0; i < list.length; i++) {
@@ -194,6 +171,15 @@ function ChartApp() {
           objUmts5[list[i]["frequency"]] = 1;
         }
       }
+
+      if (list[i]["System"] === "UMTS" && list[i]["CELL ID"]) {
+        if (objUmts6[list[i]["CELL ID"]]) {
+          objUmts6[list[i]["CELL ID"]]++;
+        } else {
+          objUmts6[list[i]["CELL ID"]] = 1;
+        }
+      }
+
       //GSM calculation
 
       if (list[i]["System"] === "GSM" && list[i]["CELL ID"]) {
@@ -223,18 +209,26 @@ function ChartApp() {
         array1.push(list[i]["Time"]);
         array2.push(parseInt(list[i]["Rx Level"]));
       }
+
+      if (list[i]["System"] === "GSM" && list[i]["CELL ID"]) {
+        if (obj8[list[i]["CELL ID"]]) {
+          obj8[list[i]["CELL ID"]]++;
+        } else {
+          obj8[list[i]["CELL ID"]] = 1;
+        }
+      }
     }
     //*************************************************LTE************************************** */
-    var head = [];
-    var value = [];
-    Object.keys(obj).forEach((x) => {
-      head.push(x);
-      value.push(obj[x]);
+    var head2 = [];
+    var value2 = [];
+    Object.keys(obj2).forEach((x) => {
+      head2.push(x);
+      value2.push(obj2[x]);
     });
-    setChartDisplay((prev) =>
+    setLteChartDisplay((prev) =>
       prev.concat({
-        head: head,
-        value: value,
+        head: head2,
+        value: value2,
         bar: true,
         label: "RSRP",
         loading: true,
@@ -247,7 +241,7 @@ function ChartApp() {
       head3.push(x);
       value3.push(obj3[x]);
     });
-    setChartDisplay((prev) =>
+    setLteChartDisplay((prev) =>
       prev.concat({
         head: head3,
         value: value3,
@@ -264,7 +258,7 @@ function ChartApp() {
       value4.push(obj4[x]);
     });
 
-    setChartDisplay((prev) =>
+    setLteChartDisplay((prev) =>
       prev.concat({
         head: head4,
         value: value4,
@@ -281,7 +275,7 @@ function ChartApp() {
       value5.push(obj5[x]);
     });
 
-    setChartDisplay((prev) =>
+    setLteChartDisplay((prev) =>
       prev.concat({
         head: head5,
         value: value5,
@@ -297,7 +291,7 @@ function ChartApp() {
       head6.push(x);
       value6.push(obj6[x]);
     });
-    setChartDisplay((prev) =>
+    setLteChartDisplay((prev) =>
       prev.concat({
         head: head6,
         value: value6,
@@ -314,7 +308,7 @@ function ChartApp() {
       value7.push(obj7[x]);
     });
 
-    setChartDisplay((prev) =>
+    setLteChartDisplay((prev) =>
       prev.concat({
         head: head7,
         value: value7,
@@ -325,25 +319,23 @@ function ChartApp() {
     );
 
     //*************************************************UMTS************************************** */
-    var head1 = [];
-    var value1 = [];
-    Object.keys(obj1).forEach((x) => {
-      head1.push(x);
-      value1.push(obj1[x]);
-    });
 
-    var head2 = [];
-    var value2 = [];
-    Object.keys(obj2).forEach((x) => {
-      head2.push(x);
-      value2.push(obj2[x]);
-    });
     var headUmts1 = [];
     var valueUmts1 = [];
     Object.keys(objUmts1).forEach((x) => {
       headUmts1.push(x);
       valueUmts1.push(objUmts1[x]);
     });
+
+    setUmtsChartDisplay((prev) =>
+      prev.concat({
+        head: headUmts1,
+        value: valueUmts1,
+        bar: true,
+        label: "RSCP",
+        loading: true,
+      })
+    );
 
     var headUmts2 = [];
     var valueUmts2 = [];
@@ -352,12 +344,32 @@ function ChartApp() {
       valueUmts2.push(objUmts2[x]);
     });
 
+    setUmtsChartDisplay((prev) =>
+      prev.concat({
+        head: headUmts2,
+        value: valueUmts2,
+        bar: true,
+        label: "Ec/I0",
+        loading: true,
+      })
+    );
+
     var headUmts3 = [];
     var valueUmts3 = [];
     Object.keys(objUmts3).forEach((x) => {
       headUmts3.push(x);
       valueUmts3.push(objUmts3[x]);
     });
+
+    setUmtsChartDisplay((prev) =>
+      prev.concat({
+        head: headUmts3,
+        value: valueUmts3,
+        bar: true,
+        label: "RSSI",
+        loading: true,
+      })
+    );
 
     var headUmts4 = [];
     var valueUmts4 = [];
@@ -366,6 +378,16 @@ function ChartApp() {
       valueUmts4.push(objUmts4[x]);
     });
 
+    setUmtsChartDisplay((prev) =>
+      prev.concat({
+        head: headUmts4,
+        value: valueUmts4,
+        pie: true,
+        label: "UMTS band",
+        loading: true,
+      })
+    );
+
     var headUmts5 = [];
     var valueUmts5 = [];
     Object.keys(objUmts5).forEach((x) => {
@@ -373,23 +395,94 @@ function ChartApp() {
       valueUmts5.push(objUmts5[x]);
     });
 
-    setArray1(array1);
-    setArray2(array2);
-    setHead1(head1);
-    setValue1(value1);
-    setHead2(head2);
-    setValue2(value2);
+    setUmtsChartDisplay((prev) =>
+      prev.concat({
+        head: headUmts5,
+        value: valueUmts5,
+        pie: true,
+        label: "UMTS Frequencies",
+        loading: true,
+      })
+    );
 
-    setHeadUmts1(headUmts1);
-    setValueUmts1(valueUmts1);
-    setHeadUmts2(headUmts2);
-    setValueUmts2(valueUmts2);
-    setHeadUmts3(headUmts3);
-    setValueUmts3(valueUmts3);
-    setHeadUmts4(headUmts4);
-    setValueUmts4(valueUmts4);
-    setHeadUmts5(headUmts5);
-    setValueUmts5(valueUmts5);
+    var headUmts6 = [];
+    var valueUmts6 = [];
+    Object.keys(objUmts6).forEach((x) => {
+      headUmts6.push(x);
+      valueUmts6.push(objUmts6[x]);
+    });
+
+    setUmtsChartDisplay((prev) =>
+      prev.concat({
+        head: headUmts6,
+        value: valueUmts6,
+        bar: true,
+        label: "UMTS Cell count",
+        loading: true,
+      })
+    );
+    /*****************************************GSM********************************** */
+
+    var head = [];
+    var value = [];
+    Object.keys(obj).forEach((x) => {
+      head.push(x);
+      value.push(obj[x]);
+    });
+
+    setGsmChartDisplay((prev) =>
+      prev.concat({
+        head: head,
+        value: value,
+        bar: true,
+        label: "Rx level",
+        loading: true,
+      })
+    );
+
+    var head1 = [];
+    var value1 = [];
+    Object.keys(obj1).forEach((x) => {
+      head1.push(x);
+      value1.push(obj1[x]);
+    });
+
+    setGsmChartDisplay((prev) =>
+      prev.concat({
+        head: head1,
+        value: value1,
+        pie: true,
+        label: "GSM band",
+        loading: true,
+      })
+    );
+
+    setGsmChartDisplay((prev) =>
+      prev.concat({
+        head: array1,
+        value: array2,
+        line: true,
+        label: "Rxlevel trending",
+        loading: true,
+      })
+    );
+
+    var head8 = [];
+    var value8 = [];
+    Object.keys(obj8).forEach((x) => {
+      head8.push(x);
+      value8.push(obj8[x]);
+    });
+
+    setGsmChartDisplay((prev) =>
+      prev.concat({
+        head: head8,
+        value: value8,
+        bar: true,
+        label: "GSM Cell count",
+        loading: true,
+      })
+    );
 
     setLoading(true);
   };
@@ -397,7 +490,8 @@ function ChartApp() {
   // handle file upload
   const handleFileUpload = (e) => {
     setLoading(false);
-    setChartDisplay([]);
+    setLteChartDisplay([]);
+    setUmtsChartDisplay([]);
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onload = (evt) => {
@@ -423,21 +517,21 @@ function ChartApp() {
   };
   const displayLTE = () => {
     var x = [];
-    for (var i = 0; i < chartDisplay.length; i = i + 2) {
+    for (var i = 0; i < ltechartDisplay.length; i = i + 2) {
       x.push(
         <div className="row mt-4">
           <div className="col-sm-6 ">
             <Card>
               <Card.Body>
                 <Card.Text>
-                  {loading && chartDisplay[i]["loading"] ? (
+                  {loading && ltechartDisplay[i]["loading"] ? (
                     <Appc
-                      head={chartDisplay[i]["head"]}
-                      value={chartDisplay[i]["value"]}
-                      bar={chartDisplay[i]["bar"]}
-                      pie={chartDisplay[i]["pie"]}
-                      line={chartDisplay[i]["line"]}
-                      label={chartDisplay[i]["label"]}
+                      head={ltechartDisplay[i]["head"]}
+                      value={ltechartDisplay[i]["value"]}
+                      bar={ltechartDisplay[i]["bar"]}
+                      pie={ltechartDisplay[i]["pie"]}
+                      line={ltechartDisplay[i]["line"]}
+                      label={ltechartDisplay[i]["label"]}
                     />
                   ) : (
                     <div>There are no records to display</div>
@@ -451,15 +545,121 @@ function ChartApp() {
               <Card.Body>
                 <Card.Text>
                   {loading &&
-                  chartDisplay[i + 1] &&
-                  chartDisplay[i + 1]["loading"] ? (
+                  ltechartDisplay[i + 1] &&
+                  ltechartDisplay[i + 1]["loading"] ? (
                     <Appc
-                      head={chartDisplay[i + 1]["head"]}
-                      value={chartDisplay[i + 1]["value"]}
-                      bar={chartDisplay[i + 1]["bar"]}
-                      pie={chartDisplay[i + 1]["pie"]}
-                      line={chartDisplay[i + 1]["line"]}
-                      label={chartDisplay[i + 1]["label"]}
+                      head={ltechartDisplay[i + 1]["head"]}
+                      value={ltechartDisplay[i + 1]["value"]}
+                      bar={ltechartDisplay[i + 1]["bar"]}
+                      pie={ltechartDisplay[i + 1]["pie"]}
+                      line={ltechartDisplay[i + 1]["line"]}
+                      label={ltechartDisplay[i + 1]["label"]}
+                    />
+                  ) : (
+                    <div>There are no records to display</div>
+                  )}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        </div>
+      );
+    }
+    return x;
+  };
+
+  const displayUMTS = () => {
+    var x = [];
+    for (var i = 0; i < umtschartDisplay.length; i = i + 2) {
+      x.push(
+        <div className="row mt-4">
+          <div className="col-sm-6 ">
+            <Card>
+              <Card.Body>
+                <Card.Text>
+                  {loading && umtschartDisplay[i]["loading"] ? (
+                    <Appc
+                      head={umtschartDisplay[i]["head"]}
+                      value={umtschartDisplay[i]["value"]}
+                      bar={umtschartDisplay[i]["bar"]}
+                      pie={umtschartDisplay[i]["pie"]}
+                      line={umtschartDisplay[i]["line"]}
+                      label={umtschartDisplay[i]["label"]}
+                    />
+                  ) : (
+                    <div>There are no records to display</div>
+                  )}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+          <div className=" col-sm-6">
+            <Card>
+              <Card.Body>
+                <Card.Text>
+                  {loading &&
+                  umtschartDisplay[i + 1] &&
+                  umtschartDisplay[i + 1]["loading"] ? (
+                    <Appc
+                      head={umtschartDisplay[i + 1]["head"]}
+                      value={umtschartDisplay[i + 1]["value"]}
+                      bar={umtschartDisplay[i + 1]["bar"]}
+                      pie={umtschartDisplay[i + 1]["pie"]}
+                      line={umtschartDisplay[i + 1]["line"]}
+                      label={umtschartDisplay[i + 1]["label"]}
+                    />
+                  ) : (
+                    <div>There are no records to display</div>
+                  )}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        </div>
+      );
+    }
+    return x;
+  };
+
+  const displayGSM = () => {
+    var x = [];
+    for (var i = 0; i < gsmchartDisplay.length; i = i + 2) {
+      x.push(
+        <div className="row mt-4">
+          <div className="col-sm-6 ">
+            <Card>
+              <Card.Body>
+                <Card.Text>
+                  {loading && gsmchartDisplay[i]["loading"] ? (
+                    <Appc
+                      head={gsmchartDisplay[i]["head"]}
+                      value={gsmchartDisplay[i]["value"]}
+                      bar={gsmchartDisplay[i]["bar"]}
+                      pie={gsmchartDisplay[i]["pie"]}
+                      line={gsmchartDisplay[i]["line"]}
+                      label={gsmchartDisplay[i]["label"]}
+                    />
+                  ) : (
+                    <div>There are no records to display</div>
+                  )}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+          <div className=" col-sm-6">
+            <Card>
+              <Card.Body>
+                <Card.Text>
+                  {loading &&
+                  gsmchartDisplay[i + 1] &&
+                  gsmchartDisplay[i + 1]["loading"] ? (
+                    <Appc
+                      head={gsmchartDisplay[i + 1]["head"]}
+                      value={gsmchartDisplay[i + 1]["value"]}
+                      bar={gsmchartDisplay[i + 1]["bar"]}
+                      pie={gsmchartDisplay[i + 1]["pie"]}
+                      line={gsmchartDisplay[i + 1]["line"]}
+                      label={gsmchartDisplay[i + 1]["label"]}
                     />
                   ) : (
                     <div>There are no records to display</div>
@@ -556,211 +756,10 @@ function ChartApp() {
                   {displayLTE()}
                 </Tab>
                 <Tab eventKey="umts" title="UMTS">
-                  <div className="row">
-                    <div className="col-sm-4">
-                      <Card
-                        style={{
-                          width: "35rem",
-                          marginTop: "1rem",
-                          marginRight: "12rem",
-                        }}
-                      >
-                        <Card.Body>
-                          <Card.Text>
-                            {loading ? (
-                              <Appc
-                                head={headUmts1}
-                                value={valueUmts1}
-                                bar={true}
-                                label={"RSCP"}
-                              />
-                            ) : (
-                              <div>There are no records to display</div>
-                            )}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="col-sm-4">
-                      <Card
-                        style={{
-                          width: "35rem",
-                          marginTop: "1rem",
-                          marginLeft: "12rem",
-                        }}
-                      >
-                        <Card.Body>
-                          <Card.Text>
-                            {loading ? (
-                              <Appc
-                                head={headUmts2}
-                                value={valueUmts2}
-                                label={"Ec/Io"}
-                                bar={true}
-                              />
-                            ) : (
-                              <div>There are no records to display</div>
-                            )}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-sm-4">
-                      <Card
-                        style={{
-                          width: "35rem",
-                          marginTop: "1rem",
-                          marginRight: "12rem",
-                        }}
-                      >
-                        <Card.Body>
-                          <Card.Text>
-                            {loading ? (
-                              <Appc
-                                head={headUmts3}
-                                value={valueUmts3}
-                                bar={true}
-                                label={"RSSI"}
-                              />
-                            ) : (
-                              <div>There are no records to display</div>
-                            )}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="col-sm-4">
-                      <Card
-                        style={{
-                          width: "35rem",
-                          marginTop: "1rem",
-                          marginLeft: "12rem",
-                        }}
-                      >
-                        <Card.Body>
-                          <Card.Text>
-                            {loading ? (
-                              <Appc
-                                head={headUmts4}
-                                value={valueUmts4}
-                                label={"UMTS band"}
-                                pie={true}
-                              />
-                            ) : (
-                              <div>There are no records to display</div>
-                            )}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-sm-4">
-                      <Card
-                        style={{
-                          width: "35rem",
-                          marginTop: "1rem",
-                          marginRight: "12rem",
-                        }}
-                      >
-                        <Card.Body>
-                          <Card.Text>
-                            {loading ? (
-                              <Appc
-                                head={headUmts5}
-                                value={valueUmts5}
-                                label={"UMTS Frequencies"}
-                                pie={true}
-                              />
-                            ) : (
-                              <div>There are no records to display</div>
-                            )}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="col-sm-4"></div>
-                  </div>
+                  {displayUMTS()}
                 </Tab>
                 <Tab eventKey="gsm" title="GSM">
-                  <div className="row">
-                    <div className="col-sm-4">
-                      <Card
-                        style={{
-                          width: "35rem",
-                          marginTop: "1rem",
-                          marginRight: "12rem",
-                        }}
-                      >
-                        <Card.Body>
-                          <Card.Text>
-                            {loading ? (
-                              <Appc
-                                head={head}
-                                value={value}
-                                label={"Rx level"}
-                                bar={true}
-                              />
-                            ) : (
-                              <div>There are no records to display</div>
-                            )}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="col-sm-4">
-                      <Card
-                        style={{
-                          width: "35rem",
-                          marginTop: "1rem",
-                          marginLeft: "12rem",
-                        }}
-                      >
-                        <Card.Body>
-                          <Card.Text>
-                            {loading ? (
-                              <Appc
-                                head={head1}
-                                value={value1}
-                                label={"GSM band"}
-                                pie={true}
-                              />
-                            ) : (
-                              <div>There are no records to display</div>
-                            )}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-sm-4">
-                      <Card
-                        style={{
-                          width: "35rem",
-                          marginTop: "1rem",
-                          marginRight: "12rem",
-                        }}
-                      >
-                        <Card.Body>
-                          <Card.Text>
-                            {loading ? (
-                              <Appc
-                                head={array1}
-                                value={array2}
-                                label={"Rxlevel trends"}
-                                line={true}
-                              />
-                            ) : (
-                              <div>There are no records to display</div>
-                            )}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                  </div>
+                  {displayGSM()}
                 </Tab>
               </Tabs>
             </div>

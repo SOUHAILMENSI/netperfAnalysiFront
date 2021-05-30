@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { Button } from "react-bootstrap";
 function Headers(props) {
   const user = getUser();
 
@@ -14,6 +13,8 @@ function Headers(props) {
     removeUserSession();
     history.push("/login");
   };
+
+  let url="";
   return (
     <>
       <Navbar bg="primary" variant="dark">
@@ -35,7 +36,7 @@ function Headers(props) {
         </Nav>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text onClick={handleLogout}>
-            Signed in as: <a href="#"> {user.name} </a>
+            Signed in as: <a href={url}> {user.name} </a>
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
