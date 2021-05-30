@@ -24,7 +24,7 @@ function App() {
       return;
     }
 
-    axios.get(`http://localhost:5000/verifyToken?token=${token}`).then(response => {
+    axios.get(`${process.env.REACT_APP_BACK_URI}/verifyToken?token=${token}`).then(response => {
       setUserSession(response.data.token, response.data.user);
       setAuthLoading(false);
       
