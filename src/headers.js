@@ -26,12 +26,12 @@ function Headers(props) {
           <NavLink exact activeClassName="active" to="/">
             <Nav.Link href="/">Home</Nav.Link>
           </NavLink>
-          <NavLink activeClassName="active" to="/dashboard">
-            <Nav.Link href="dashboard">Radio Technology</Nav.Link>
+          <NavLink activeClassName="active" to="/dashboardqos">
+            <Nav.Link href="dashboardqos">Radio Technology</Nav.Link>
           </NavLink>
 
-          <NavLink activeClassName="active" to="/dashboard2">
-            <Nav.Link href="/dashboard2">Data Services</Nav.Link>
+          <NavLink activeClassName="active" to="/dashboardqoe">
+            <Nav.Link href="/dashboardqoe">Data Services</Nav.Link>
           </NavLink>
         </Nav>
         <Navbar.Collapse className="justify-content-end">

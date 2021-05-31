@@ -3,7 +3,8 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import Login from './Login';
-import Dashboard from './Dashboard';
+import Dashboardqos from './Dashboardqos';
+import Dashboardqoe from './Dashboardqoe';
 import Home from './Home';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -46,8 +47,8 @@ function App() {
             <Switch>
               <PrivateRoute exact path="/" component={Home} />
               <PublicRoute path="/login" component={Login} />
-              <PrivateRoute path="/dashboard" component={Dashboard} />
-              <PrivateRoute path="/dashboard2" component={Dashboard} />
+              <PrivateRoute path="/Dashboardqos" component={Dashboardqos} />
+              <PrivateRoute path="/Dashboardqoe" component={Dashboardqoe} />
 
             </Switch>
           </div>

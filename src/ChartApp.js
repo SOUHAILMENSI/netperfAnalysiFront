@@ -508,7 +508,6 @@ function ChartApp() {
     reader.readAsBinaryString(file);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
   const displayLTE = () => {
     var x = [];
     for (var i = 0; i < ltechartDisplay.length; i = i + 2) {
