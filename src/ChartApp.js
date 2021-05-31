@@ -4,8 +4,7 @@ import Appc from "./stat/Appc";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import Card from "react-bootstrap/Card";
-import Modal from "react-bootstrap/Modal";
-import { Form, Button } from "react-bootstrap";
+
 
 function ChartApp() {
   const [loading, setLoading] = useState(false);
@@ -510,12 +509,6 @@ function ChartApp() {
   };
 
   const [isOpen, setIsOpen] = useState(false);
-  const showModal = () => {
-    setIsOpen(true);
-  };
-  const hideModal = () => {
-    setIsOpen(false);
-  };
   const displayLTE = () => {
     var x = [];
     for (var i = 0; i < ltechartDisplay.length; i = i + 2) {

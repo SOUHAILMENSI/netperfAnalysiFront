@@ -19,19 +19,19 @@ function Headers(props) {
     <>
       <Navbar bg="primary" variant="dark">
         <NavLink exact activeClassName="active" to="/">
-          <Navbar.Brand href="#">NetPerf</Navbar.Brand>
+          <Navbar.Brand href="/">NetPerf</Navbar.Brand>
         </NavLink>
 
         <Nav className="mr-auto">
           <NavLink exact activeClassName="active" to="/">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
           </NavLink>
           <NavLink activeClassName="active" to="/dashboard">
-            <Nav.Link href="#features">Radio Technology</Nav.Link>
+            <Nav.Link href="dashboard">Radio Technology</Nav.Link>
           </NavLink>
 
           <NavLink activeClassName="active" to="/dashboard2">
-            <Nav.Link href="#pricing">Data Services</Nav.Link>
+            <Nav.Link href="/dashboard2">Data Services</Nav.Link>
           </NavLink>
         </Nav>
         <Navbar.Collapse className="justify-content-end">
