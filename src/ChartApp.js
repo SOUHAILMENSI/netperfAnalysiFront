@@ -693,55 +693,7 @@ function ChartApp() {
                     Upload measurement file here
                   </label>
                 </div>
-                <div className="input-group-append">
-                  <button
-                    className="btn btn-primary"
-                    type="button"
-                    onClick={showModal}
-                  >
-                    Export to PDF
-                  </button>
-                </div>
               </div>
-
-              <Modal
-                show={isOpen}
-                onHide={hideModal}
-                backdrop="static"
-                keyboard={false}
-              >
-                <Modal.Header
-                  closeButton
-                  style={{ backgroundColor: "#007bff", color: "#fff" }}
-                >
-                  Export to PDF
-                </Modal.Header>
-                <Modal.Body>
-                  Select the report template from the list below and click OK to
-                  create the report.
-                  <>
-                    <Form.Check
-                      label="LTE"
-                      aria-label="option 1"
-                      disabled={!loading}
-                    />
-                    <Form.Check
-                      label="UMTS"
-                      aria-label="option 1"
-                      disabled={!loading}
-                    />
-                    <Form.Check
-                      label="GSM"
-                      aria-label="option 1"
-                      disabled={!loading}
-                    />
-                  </>
-                </Modal.Body>
-
-                <Modal.Footer>
-                  <Button variant="primary">OK</Button>
-                </Modal.Footer>
-              </Modal>
             </div>
           </div>
         </div>
