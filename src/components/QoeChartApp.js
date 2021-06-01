@@ -58,26 +58,25 @@ function QoeChartApp() {
     let objyoutube4 = {};
     let array1 = [];
     let array2 = [];
+    let objcounter = {};
 
     for (let i = 0; i < list.length; i++) {
       // Browsing calculation
 
-      if (list[i]["Service"] === "HTTP browsing" ) {
-        if (obj2[list[i]["HTTP browsing"]]) {
-          obj2[list[i]["HTTP browsing"]]++;
+      if (list[i]["Service"] === "HTTP browsing") {
+        if (obj2[list[i]["Service"]]) {
+          obj2[list[i]["Service"]]++;
         } else {
-          obj2[list[i]["HTTP browsing"]] = 1;
+          obj2[list[i]["Service"]] = 1;
         }
       }
 
-      if (list[i]["Service"] === "HTTP browsing" ) {
-        if (obj3[list[i]["HTTP browsing"]]) {
-          obj3[list[i]["HTTP browsing"]] =
-            obj3[list[i]["HTTP browsing"]] +
-            parseInt(list[i]["Page load time"]) / (1000 * 2);
+      if (list[i]["Service"] === "HTTP browsing") {
+        if (obj3[list[i]["Service"]]) {
+          obj3[list[i]["Service"]] =
+            obj3[list[i]["Service"]] + parseInt(list[i]["Page load time"]);
         } else {
-          obj3[list[i]["HTTP browsing"]] =
-            parseInt(list[i]["Page load time"]) / 1000;
+          obj3[list[i]["Service"]] = parseInt(list[i]["Page load time"]);
         }
       }
 
@@ -91,55 +90,57 @@ function QoeChartApp() {
 
       if (list[i]["Service"] === "HTTP browsing" && list[i]["Host"]) {
         if (obj5[list[i]["Host"]]) {
+          objcounter[list[i]["Host"]]++;
+
           obj5[list[i]["Host"]] =
-            obj5[list[i]["Host"]] +
-            parseInt(list[i]["Page load time"]) / (1000 * 2);
+            obj5[list[i]["Host"]] + parseInt(list[i]["Page load time"]);
         } else {
-          obj5[list[i]["Host"]] = parseInt(list[i]["Page load time"]) / 1000;
+          obj5[list[i]["Host"]] = parseInt(list[i]["Page load time"]);
+          objcounter[list[i]["Host"]] =1;
         }
       }
 
       // Youtube calculation
 
       if (list[i]["Service"] === "Streaming") {
-        if (objyoutube1[list[i]["Streaming"]]) {
-          objyoutube1[list[i]["Streaming"]]++;
+        if (objyoutube1[list[i]["Service"]]) {
+          objyoutube1[list[i]["Service"]]++;
         } else {
-          objyoutube1[list[i]["Streaming"]] = 1;
+          objyoutube1[list[i]["Service"]] = 1;
         }
       }
 
       if (list[i]["Service"] === "Streaming") {
-        if (objyoutube2[list[i]["Streaming"]]) {
-          objyoutube2[list[i]["Streaming"]] =
-            objyoutube2[list[i]["Streaming"]] +
-            parseInt(list[i]["Time to 1st picture"]) / 2;
+        if (objyoutube2[list[i]["Service"]]) {
+          objyoutube2[list[i]["Service"]] =
+            objyoutube2[list[i]["Service"]] +
+            parseInt(list[i]["Time to 1st picture"]);
         } else {
-          objyoutube2[list[i]["Streaming"]] = parseInt(
+          objyoutube2[list[i]["Service"]] = parseInt(
             list[i]["Time to 1st picture"]
           );
         }
       }
 
       if (list[i]["Service"] === "Streaming") {
-        if (objyoutube3[list[i]["Streaming"]]) {
-          objyoutube3[list[i]["Streaming"]] =
-            objyoutube3[list[i]["Streaming"]] +
-            parseInt(list[i]["Video load delay"]) / 2;
+        if (objyoutube3[list[i]["Service"]]) {
+          objyoutube3[list[i]["Service"]] =
+            objyoutube3[list[i]["Service"]] +
+            parseInt(list[i]["Video load delay"]);
         } else {
-          objyoutube3[list[i]["Streaming"]] = parseInt(
+          objyoutube3[list[i]["Service"]] = parseInt(
             list[i]["Video load delay"]
           );
         }
       }
 
       if (list[i]["Service"] === "Streaming") {
-        if (objyoutube4[list[i]["Streaming"]]) {
-          objyoutube4[list[i]["Streaming"]] =
-            objyoutube4[list[i]["Streaming"]] +
-            parseInt(list[i]["Video start delay"]) / 2;
+        if (objyoutube4[list[i]["Service"]]) {
+          objyoutube4[list[i]["Service"]] =
+            objyoutube4[list[i]["Service"]] +
+            parseInt(list[i]["Video start delay"]);
         } else {
-          objyoutube4[list[i]["Streaming"]] = parseInt(
+          objyoutube4[list[i]["Service"]] = parseInt(
             list[i]["Video start delay"]
           );
         }
@@ -148,21 +149,20 @@ function QoeChartApp() {
       //App throughput calculation
 
       if (list[i]["Service"] === "HTTP transfert") {
-        if (obj[list[i]["HTTP transfert"]]) {
-          obj[list[i]["HTTP transfert"]]++;
+        if (obj[list[i]["Service"]]) {
+          obj[list[i]["Service"]]++;
         } else {
-          obj[list[i]["HTTP transfert"]] = 1;
+          obj[list[i]["Service"]] = 1;
         }
       }
 
       if (list[i]["Service"] === "HTTP transfert") {
-        if (obj1[list[i]["HTTP transfert"]]) {
-          obj1[list[i]["HTTP transfert"]] =
-            
-              obj1[list[i]["HTTP transfert"]] + parseInt(list[i]["Avg throughput"])
-            / 2;
+        if (obj1[list[i]["Service"]]) {
+          obj1[list[i]["Service"]] =
+            obj1[list[i]["Service"]] +
+            parseInt(list[i]["Avg throughput"]);
         } else {
-          obj1[list[i]["HTTP transfert"]] = parseInt(list[i]["Avg throughput"]);
+          obj1[list[i]["Service"]] = parseInt(list[i]["Avg throughput"]);
         }
       }
 
@@ -182,9 +182,9 @@ function QoeChartApp() {
         array1.push(list[i]["Time"]);
         array2.push(parseInt(list[i]["Avg throughput"]));
       }
-
     }
-    //*************************************************LTE************************************** */
+
+    //*************************************************Browsing************************************** */
     var head2 = [];
     var value2 = [];
     Object.keys(obj2).forEach((x) => {
@@ -201,16 +201,10 @@ function QoeChartApp() {
       })
     );
 
-    var head3 = [];
-    var value3 = [];
-    Object.keys(obj3).forEach((x) => {
-      head3.push(x);
-      value3.push(obj3[x]);
-    });
     setBrowsingChartDisplay((prev) =>
       prev.concat({
-        head: head3,
-        value: value3,
+        head: ["HTTP browsing"],
+        value: [obj3["HTTP browsing"] / obj2[["HTTP browsing"]]],
         bar: true,
         label: "Page load time Overall [Avg]",
         loading: true,
@@ -238,7 +232,7 @@ function QoeChartApp() {
     var value5 = [];
     Object.keys(obj5).forEach((x) => {
       head5.push(x);
-      value5.push(obj5[x]);
+      value5.push(obj5[x] / objcounter[x]);
     });
 
     setBrowsingChartDisplay((prev) =>
@@ -270,51 +264,30 @@ function QoeChartApp() {
       })
     );
 
-    var headyoutube2 = [];
-    var valueyoutube2 = [];
-    Object.keys(objyoutube2).forEach((x) => {
-      headyoutube2.push(x);
-      valueyoutube2.push(objyoutube2[x]);
-    });
-
     setYoutubeChartDisplay((prev) =>
       prev.concat({
-        head: headyoutube2,
-        value: valueyoutube2,
+        head: ["Streaming"],
+        value: [objyoutube2[["Streaming"]]/objyoutube1[["Streaming"]]],
         bar: true,
         label: "Time to 1st pict [Avg]",
         loading: true,
       })
     );
 
-    var headyoutube3 = [];
-    var valueyoutube3 = [];
-    Object.keys(objyoutube3).forEach((x) => {
-      headyoutube3.push(x);
-      valueyoutube3.push(objyoutube3[x]);
-    });
-
     setYoutubeChartDisplay((prev) =>
       prev.concat({
-        head: headyoutube3,
-        value: valueyoutube3,
+        head: ["Streaming"],
+        value: [objyoutube3[["Streaming"]]/objyoutube1[["Streaming"]]],
         bar: true,
         label: "Video load delay [Avg]",
         loading: true,
       })
     );
 
-    var headyoutube4 = [];
-    var valueyoutube4 = [];
-    Object.keys(objyoutube4).forEach((x) => {
-      headyoutube4.push(x);
-      valueyoutube4.push(objyoutube4[x]);
-    });
-
     setYoutubeChartDisplay((prev) =>
       prev.concat({
-        head: headyoutube4,
-        value: valueyoutube4,
+        head: ["Streaming"],
+        value: [objyoutube4[["Streaming"]]/objyoutube1[["Streaming"]]],
         bar: true,
         label: "Video Start delay [Avg]",
         loading: true,
@@ -348,8 +321,8 @@ function QoeChartApp() {
 
     setSpeedChartDisplay((prev) =>
       prev.concat({
-        head: head1,
-        value: value1,
+        head: ["HTTP transfert"],
+        value: [obj1[["HTTP transfert"]]/obj[["HTTP transfert"]]],
         bar: true,
         label: "Application Throughput [Avg]",
         loading: true,

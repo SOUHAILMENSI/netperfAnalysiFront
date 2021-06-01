@@ -62,37 +62,44 @@ function QosChartApp() {
     let objUmts6 = {};
     let array1 = [];
     let array2 = [];
+    let objcounter = {};
+    let objcounter1 ={};
+    let objcounter2 ={};
     
     for (let i = 0; i < list.length; i++) {
       // LTE calculation
 
       if (list[i]["System"] === "LTE" && list[i]["CELL ID"]) {
         if (obj2[list[i]["CELL ID"]]) {
+          objcounter[list[i]["CELL ID"]]++;
+
           obj2[list[i]["CELL ID"]] =
-            Math.floor(obj2[list[i]["CELL ID"]] + parseInt(list[i]["RSRP"])) /
-            2;
+            obj2[list[i]["CELL ID"]] + parseInt(list[i]["RSRP"]);
         } else {
-          obj2[list[i]["CELL ID"]] = Math.floor(parseInt(list[i]["RSRP"]));
+          obj2[list[i]["CELL ID"]] = parseInt(list[i]["RSRP"]);
+          objcounter[list[i]["CELL ID"]]=1;
         }
       }
 
       if (list[i]["System"] === "LTE" && list[i]["CELL ID"]) {
         if (obj3[list[i]["CELL ID"]]) {
+          
           obj3[list[i]["CELL ID"]] =
-            Math.floor(obj3[list[i]["CELL ID"]] + parseInt(list[i]["RSRQ"])) /
-            2;
+            obj3[list[i]["CELL ID"]] + parseInt(list[i]["RSRQ"]);
         } else {
-          obj3[list[i]["CELL ID"]] = Math.floor(parseInt(list[i]["RSRQ"]));
+          obj3[list[i]["CELL ID"]] = parseInt(list[i]["RSRQ"]);
+          
         }
       }
 
       if (list[i]["System"] === "LTE" && list[i]["CELL ID"]) {
         if (obj4[list[i]["CELL ID"]]) {
+          
           obj4[list[i]["CELL ID"]] =
-            Math.floor(obj4[list[i]["CELL ID"]] + parseInt(list[i]["SINR"])) /
-            2;
+            obj4[list[i]["CELL ID"]] + parseInt(list[i]["SINR"]);
         } else {
-          obj4[list[i]["CELL ID"]] = Math.floor(parseInt(list[i]["SINR"]));
+          obj4[list[i]["CELL ID"]] = parseInt(list[i]["SINR"]);
+         
         }
       }
 
@@ -101,6 +108,7 @@ function QosChartApp() {
           obj5[list[i]["Band"]]++;
         } else {
           obj5[list[i]["Band"]] = 1;
+
         }
       }
 
@@ -124,34 +132,35 @@ function QosChartApp() {
 
       if (list[i]["System"] === "UMTS" && list[i]["CELL ID"]) {
         if (objUmts1[list[i]["CELL ID"]]) {
+          objcounter1[list[i]["CELL ID"]]++;
+
           objUmts1[list[i]["CELL ID"]] =
-            Math.floor(
-              objUmts1[list[i]["CELL ID"]] + parseInt(list[i]["RSCP"])
-            ) / 2;
+              objUmts1[list[i]["CELL ID"]] + parseInt(list[i]["RSCP"]);
         } else {
-          objUmts1[list[i]["CELL ID"]] = Math.floor(parseInt(list[i]["RSCP"]));
+          objUmts1[list[i]["CELL ID"]] = parseInt(list[i]["RSCP"]);
+          objcounter1[list[i]["CELL ID"]]=1;
         }
       }
 
       if (list[i]["System"] === "UMTS" && list[i]["CELL ID"]) {
         if (objUmts2[list[i]["CELL ID"]]) {
+          
           objUmts2[list[i]["CELL ID"]] =
-            Math.floor(
-              objUmts2[list[i]["CELL ID"]] + parseInt(list[i]["EcN0"])
-            ) / 2;
+            
+              objUmts2[list[i]["CELL ID"]] + parseInt(list[i]["EcN0"]);
         } else {
-          objUmts2[list[i]["CELL ID"]] = Math.floor(parseInt(list[i]["EcN0"]));
+          objUmts2[list[i]["CELL ID"]] = parseInt(list[i]["EcN0"]);
+         
         }
       }
 
       if (list[i]["System"] === "UMTS" && list[i]["CELL ID"]) {
         if (objUmts3[list[i]["CELL ID"]]) {
           objUmts3[list[i]["CELL ID"]] =
-            Math.floor(
-              objUmts3[list[i]["CELL ID"]] + parseInt(list[i]["RSSI"])
-            ) / 2;
+           
+              objUmts3[list[i]["CELL ID"]] + parseInt(list[i]["RSSI"]);
         } else {
-          objUmts3[list[i]["CELL ID"]] = Math.floor(parseInt(list[i]["RSSI"]));
+          objUmts3[list[i]["CELL ID"]] = parseInt(list[i]["RSSI"]);
         }
       }
 
@@ -183,12 +192,13 @@ function QosChartApp() {
 
       if (list[i]["System"] === "GSM" && list[i]["CELL ID"]) {
         if (obj[list[i]["CELL ID"]]) {
+          objcounter2[list[i]["CELL ID"]]++;
           obj[list[i]["CELL ID"]] =
-            Math.floor(
-              obj[list[i]["CELL ID"]] + parseInt(list[i]["Rx Level"])
-            ) / 2;
+           
+              obj[list[i]["CELL ID"]] + parseInt(list[i]["Rx Level"]);
         } else {
-          obj[list[i]["CELL ID"]] = Math.floor(parseInt(list[i]["Rx Level"]));
+          obj[list[i]["CELL ID"]] = parseInt(list[i]["Rx Level"]);
+          objcounter2[list[i]["CELL ID"]]=1;
         }
       }
 
@@ -222,7 +232,7 @@ function QosChartApp() {
     var value2 = [];
     Object.keys(obj2).forEach((x) => {
       head2.push(x);
-      value2.push(obj2[x]);
+      value2.push(obj2[x]/objcounter[x]);
     });
     setLteChartDisplay((prev) =>
       prev.concat({
@@ -238,7 +248,7 @@ function QosChartApp() {
     var value3 = [];
     Object.keys(obj3).forEach((x) => {
       head3.push(x);
-      value3.push(obj3[x]);
+      value3.push(obj3[x]/objcounter[x]);
     });
     setLteChartDisplay((prev) =>
       prev.concat({
@@ -254,7 +264,7 @@ function QosChartApp() {
     var value4 = [];
     Object.keys(obj4).forEach((x) => {
       head4.push(x);
-      value4.push(obj4[x]);
+      value4.push(obj4[x]/objcounter[x]);
     });
 
     setLteChartDisplay((prev) =>
@@ -323,7 +333,7 @@ function QosChartApp() {
     var valueUmts1 = [];
     Object.keys(objUmts1).forEach((x) => {
       headUmts1.push(x);
-      valueUmts1.push(objUmts1[x]);
+      valueUmts1.push(objUmts1[x]/objcounter1[x]);
     });
 
     setUmtsChartDisplay((prev) =>
@@ -340,7 +350,7 @@ function QosChartApp() {
     var valueUmts2 = [];
     Object.keys(objUmts2).forEach((x) => {
       headUmts2.push(x);
-      valueUmts2.push(objUmts2[x]);
+      valueUmts2.push(objUmts2[x]/objcounter1[x]);
     });
 
     setUmtsChartDisplay((prev) =>
@@ -357,7 +367,7 @@ function QosChartApp() {
     var valueUmts3 = [];
     Object.keys(objUmts3).forEach((x) => {
       headUmts3.push(x);
-      valueUmts3.push(objUmts3[x]);
+      valueUmts3.push(objUmts3[x]/objcounter1[x]);
     });
 
     setUmtsChartDisplay((prev) =>
@@ -426,7 +436,7 @@ function QosChartApp() {
     var value = [];
     Object.keys(obj).forEach((x) => {
       head.push(x);
-      value.push(obj[x]);
+      value.push(obj[x]/objcounter2[x]);
     });
 
     setGsmChartDisplay((prev) =>
