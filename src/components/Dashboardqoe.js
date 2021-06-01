@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { getUser } from "./Utils/Common";
-import Headers from "./headers";
+import { getUser } from "../Utils/Common";
+import Headers from "../headers";
 import { useHistory } from "react-router-dom";
-import ChartApp from "./ChartApp";
+import QoeChartApp from "./QoeChartApp";
 
-function Dashboard(props) {
+function Dashboardqoe(props) {
   const history = useHistory();
   const user = getUser();
   const xx = (e) => {
-    setCart((ca) => ca.concat(<ChartApp />));
+    setCart((ca) => ca.concat(<QoeChartApp />));
   };
-  var [cart, setCart] = useState([<ChartApp />]);
+  var [cart, setCart] = useState([<QoeChartApp />]);
   return user ? (
     <div>
       <Headers />
@@ -26,4 +26,4 @@ function Dashboard(props) {
   );
 }
 
-export default Dashboard;
+export default Dashboardqoe;

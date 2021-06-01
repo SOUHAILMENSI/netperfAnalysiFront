@@ -5,6 +5,8 @@ import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+
+
 function Headers(props) {
   const user = getUser();
 
@@ -24,14 +26,14 @@ function Headers(props) {
 
         <Nav className="mr-auto">
           <NavLink exact activeClassName="active" to="/">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#/">Home</Nav.Link>
           </NavLink>
-          <NavLink activeClassName="active" to="/dashboard">
-            <Nav.Link href="#features">QOS Dashboard</Nav.Link>
+          <NavLink activeClassName="active" to="/qosdashboard">
+            <Nav.Link href="/qosdashboard">Radio Technology</Nav.Link>
           </NavLink>
 
-          <NavLink activeClassName="active" to="/dashboard2">
-            <Nav.Link href="#pricing">QOE Dashboard</Nav.Link>
+          <NavLink activeClassName="active" to="/qoedashboard">
+            <Nav.Link href="/qosdashboard">Data Services</Nav.Link>
           </NavLink>
         </Nav>
         <Navbar.Collapse className="justify-content-end">

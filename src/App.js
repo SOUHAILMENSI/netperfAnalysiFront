@@ -3,8 +3,9 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import Login from './Login';
-import Dashboard from './Dashboard';
-import Home from './Home';
+import Dashboard from './components/Dashboard';
+import Dashboardqoe from './components/Dashboardqoe';
+import Home from './components/Home';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -12,7 +13,6 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicRoute from './Utils/PublicRoute';
 import { getToken, removeUserSession, setUserSession } from './Utils/Common';
-
 
 
 function App() {
@@ -46,8 +46,8 @@ function App() {
             <Switch>
               <PrivateRoute exact path="/" component={Home} />
               <PublicRoute path="/login" component={Login} />
-              <PrivateRoute path="/dashboard" component={Dashboard} />
-              <PrivateRoute path="/dashboard2" component={Dashboard} />
+              <PrivateRoute path="/qosDashboard" component={Dashboard} />
+              <PrivateRoute path="/qoeDashboard" component={Dashboardqoe} />
 
             </Switch>
           </div>

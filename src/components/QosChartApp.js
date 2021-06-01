@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import * as XLSX from "xlsx";
-import Appc from "./stat/Appc";
+import Appc from "../stat/Appc";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import Card from "react-bootstrap/Card";
-import Modal from "react-bootstrap/Modal";
-import { Form, Button } from "react-bootstrap";
 
-function ChartApp() {
+function QosChartApp() {
   const [loading, setLoading] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -493,6 +491,7 @@ function ChartApp() {
     setLoading(false);
     setLteChartDisplay([]);
     setUmtsChartDisplay([]);
+    setGsmChartDisplay([]);
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onload = (evt) => {
@@ -509,13 +508,7 @@ function ChartApp() {
     reader.readAsBinaryString(file);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-  const showModal = () => {
-    setIsOpen(true);
-  };
-  const hideModal = () => {
-    setIsOpen(false);
-  };
+
   const displayLTE = () => {
     var x = [];
     for (var i = 0; i < ltechartDisplay.length; i = i + 2) {
@@ -693,55 +686,7 @@ function ChartApp() {
                     Upload measurement file here
                   </label>
                 </div>
-                <div className="input-group-append">
-                  <button
-                    className="btn btn-primary"
-                    type="button"
-                    onClick={showModal}
-                  >
-                    Export to PDF
-                  </button>
-                </div>
               </div>
-
-              <Modal
-                show={isOpen}
-                onHide={hideModal}
-                backdrop="static"
-                keyboard={false}
-              >
-                <Modal.Header
-                  closeButton
-                  style={{ backgroundColor: "#007bff", color: "#fff" }}
-                >
-                  Export to PDF
-                </Modal.Header>
-                <Modal.Body>
-                  Select the report template from the list below and click OK to
-                  create the report.
-                  <>
-                    <Form.Check
-                      label="LTE"
-                      aria-label="option 1"
-                      disabled={!loading}
-                    />
-                    <Form.Check
-                      label="UMTS"
-                      aria-label="option 1"
-                      disabled={!loading}
-                    />
-                    <Form.Check
-                      label="GSM"
-                      aria-label="option 1"
-                      disabled={!loading}
-                    />
-                  </>
-                </Modal.Body>
-
-                <Modal.Footer>
-                  <Button variant="primary">OK</Button>
-                </Modal.Footer>
-              </Modal>
             </div>
           </div>
         </div>
@@ -771,4 +716,4 @@ function ChartApp() {
   );
 }
 
-export default ChartApp;
+export default QosChartApp;

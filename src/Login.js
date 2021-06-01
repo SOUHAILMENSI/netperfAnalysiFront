@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { setUserSession } from "./Utils/Common";
-import "./login.css";
+import "./resources/login.css";
 
 function Login(props) {
   const [loading, setLoading] = useState(false);
