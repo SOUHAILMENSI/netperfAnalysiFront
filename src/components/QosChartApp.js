@@ -508,7 +508,6 @@ function QosChartApp() {
     reader.readAsBinaryString(file);
   };
 
-
   const displayLTE = () => {
     var x = [];
     for (var i = 0; i < ltechartDisplay.length; i = i + 2) {

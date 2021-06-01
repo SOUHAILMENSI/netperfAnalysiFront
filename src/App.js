@@ -5,7 +5,7 @@ import axios from 'axios';
 import Login from './Login';
 import Dashboard from './components/Dashboard';
 import Dashboardqoe from './components/Dashboardqoe';
-import Home from './components/Home';
+import Home from './Home';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";

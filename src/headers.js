@@ -21,7 +21,7 @@ function Headers(props) {
     <>
       <Navbar bg="primary" variant="dark">
         <NavLink exact activeClassName="active" to="/">
-          <Navbar.Brand href="#">NetPerf</Navbar.Brand>
+          <Navbar.Brand href="/">NetPerf</Navbar.Brand>
         </NavLink>
 
         <Nav className="mr-auto">
