@@ -1,11 +1,12 @@
 import React from "react";
 import { getUser, removeUserSession } from "./Utils/Common";
-import { NavLink } from "react-router-dom";
-
+import {
+  Nav,
+  Navbar,
+  NavDropdown,
+} from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-
+import Logo from "./imgs/ic_launcher_round.png";
 
 function Headers(props) {
   const user = getUser();
@@ -16,30 +17,46 @@ function Headers(props) {
     history.push("/login");
   };
 
-  let url="";
+  let url = "";
+
   return (
     <>
-      <Navbar bg="primary" variant="dark">
-        <NavLink exact activeClassName="active" to="/">
-          <Navbar.Brand href="/">NetPerf</Navbar.Brand>
-        </NavLink>
-
-        <Nav className="mr-auto">
-          <NavLink exact activeClassName="active" to="/">
-            <Nav.Link href="#/">Home</Nav.Link>
-          </NavLink>
-          <NavLink activeClassName="active" to="/qosdashboard">
-            <Nav.Link href="/qosdashboard">Radio Technology</Nav.Link>
-          </NavLink>
-
-          <NavLink activeClassName="active" to="/qoedashboard">
-            <Nav.Link href="/qosdashboard">Data Services</Nav.Link>
-          </NavLink>
-        </Nav>
-        <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text onClick={handleLogout}>
-            Signed in as: <a href={url}> {user.name} </a>
-          </Navbar.Text>
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="/qosDashboard">
+          <img
+            alt=""
+            src={Logo}
+            width="30"
+            height="30"
+            classNameName="d-inline-block align-top"
+          />{" "}
+          NetPerf Analytics
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link
+              href="/qosdashboard"
+              activeclassNameName="active"
+              to="/qosdashboard"
+            >
+              Radio Technology
+            </Nav.Link>
+            <Nav.Link
+              href="/qoedashboard"
+              activeclassNameName="active"
+              to="/qoedashboard"
+            >
+              Data Services
+            </Nav.Link>
+          </Nav>
+          
+            <NavDropdown title={user.name} id="basic-nav-dropdown">
+              <NavDropdown.Item href={url} onClick={handleLogout}>
+                Logout
+              </NavDropdown.Item>
+            </NavDropdown>
+         
         </Navbar.Collapse>
       </Navbar>
     </>

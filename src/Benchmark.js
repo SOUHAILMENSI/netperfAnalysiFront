@@ -22,7 +22,7 @@ function Benchmark(props) {
       </div>
     </div>
   ) : (
-    history.push("/home")
+    history.push("/qosdashboard")
   );
 }
 

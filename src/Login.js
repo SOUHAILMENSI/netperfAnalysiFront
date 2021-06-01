@@ -21,7 +21,7 @@ function Login(props) {
       .then((response) => {
         setLoading(false);
         setUserSession(response.data.token, response.data.user);
-        props.history.push("/");
+        props.history.push("/qosdashboard");
       })
       .catch((error) => {
         setLoading(false);
