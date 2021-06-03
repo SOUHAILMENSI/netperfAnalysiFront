@@ -16,7 +16,7 @@ function Login(props) {
     setError(null);
     setLoading(true);
     axios
-      .post(`${process.env.REACT_APP_BACK_URI}/users/signin`, {
+      .post(`${process.env.REACT_APP_BACK}/users/signin`, {
         username: username.value,
         password: password.value,
       })

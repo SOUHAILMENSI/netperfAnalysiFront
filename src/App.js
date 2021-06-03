@@ -23,7 +23,7 @@ function App() {
       return;
     }
 
-    axios.get(`${process.env.REACT_APP_BACK_URI}:${process.env.PORT}/verifyToken?token=${token}`).then(response => {
+    axios.get(`${process.env.REACT_APP_BACK}/verifyToken?token=${token}`).then(response => {
       setUserSession(response.data.token, response.data.user);
       setAuthLoading(false);
       
