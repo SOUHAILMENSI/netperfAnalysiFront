@@ -1,15 +1,16 @@
 import React from "react";
 import { getUser, removeUserSession } from "./Utils/Common";
-import {
-  Nav,
-  Navbar,
-  NavDropdown,
-} from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Logo from "./imgs/ic_launcher_round.png";
 
+
+
+
+
 function Headers(props) {
   const user = getUser();
+
 
   const history = useHistory();
   const handleLogout = () => {
@@ -17,7 +18,6 @@ function Headers(props) {
     history.push("/login");
   };
 
-  let url = "";
 
   return (
     <>
@@ -34,29 +34,23 @@ function Headers(props) {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link
-              href="/qosdashboard"
-              activeclassNameName="active"
-              to="/qosdashboard"
-            >
-              Radio Technology
+          <Nav className="mr-auto ">
+            <Nav.Link href="/qosdashboard" to="/qosdashboard">
+              <i class="fas fa-chart-line fa-lg "></i> Radio Technology
             </Nav.Link>
             <Nav.Link
               href="/qoedashboard"
-              activeclassNameName="active"
+              activeclassNameName="active "
               to="/qoedashboard"
             >
-              Data Services
+              <i class="fas fa-chart-pie fa-lg"></i> Data Services
             </Nav.Link>
           </Nav>
-          
-            <NavDropdown title={user.name} id="basic-nav-dropdown">
-              <NavDropdown.Item href={url} onClick={handleLogout}>
-                Logout
-              </NavDropdown.Item>
-            </NavDropdown>
-         
+
+          <span className="my-auto" > Welcome {user.name}  
+          <i class="fas fa-sign-out-alt fa-lg" style={{marginLeft: "0.5rem"}} onClick={handleLogout}></i>
+          </span> 
+
         </Navbar.Collapse>
       </Navbar>
     </>
