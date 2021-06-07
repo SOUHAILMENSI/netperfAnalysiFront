@@ -573,7 +573,7 @@ function QoeChartApp() {
                 <Tab eventKey="browsing" title="Browsing">
                   {displayBrowsing()}
                 </Tab>
-                <Tab eventKey="youtube" title="Youtube">
+                <Tab eventKey="youtube" title="Streaming">
                   {displayYoutube()}
                 </Tab>
                 <Tab eventKey="throughput" title="Application Throughput">

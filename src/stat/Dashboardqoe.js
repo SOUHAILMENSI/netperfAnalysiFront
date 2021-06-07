@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getUser } from "../Utils/Common";
 import Headers from "../headers";
+import Footer from "../footer";
 import { useHistory } from "react-router-dom";
 import QoeChartApp from "./QoeChartApp";
 
@@ -15,14 +16,19 @@ function Dashboardqoe(props) {
     <div>
       <Headers />
       <div className="container-fluid">
-      {cart}
-      <button className="btn btn-primary float-right row mt-4 mr-5" type="button" onClick={(e) => xx(e)}>
-        add new import
-      </button>
+        {cart}
+        <button
+          className="btn btn-primary float-right row mt-4 mr-5"
+          type="button"
+          onClick={(e) => xx(e)}
+        >
+          add new import
+        </button>
       </div>
+      <Footer />
     </div>
   ) : (
-    history.push("/home")
+    history.push("/qoedashboard")
   );
 }
 

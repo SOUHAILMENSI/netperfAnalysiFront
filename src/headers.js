@@ -19,7 +19,7 @@ function Headers(props) {
   return (
     <>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/qosDashboard">
+        <Navbar.Brand href="/qosdashboard">
           <img
             alt=""
             src={Logo}
