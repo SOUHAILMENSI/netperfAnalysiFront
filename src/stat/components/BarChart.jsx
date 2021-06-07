@@ -19,8 +19,6 @@ class BarChart extends Component {
       <div className="barchart">
         <Bar
           data={this.state.chartData}
-          //width={"30%"}
-          //height={"30%"}
           options={{
             responsive: true,
             maintainAspectRatio: true,

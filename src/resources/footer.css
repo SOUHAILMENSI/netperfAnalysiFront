@@ -1,0 +1,12 @@
+.main-footer {
+  border-top: 1px solid #e7e7e7;
+  background-color: #f8f9fa;
+  margin-top: 15%;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  position: relative;
+  bottom: -70px;
+  height: 100%;
+  width: 100%;
+}
+

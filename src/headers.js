@@ -3,10 +3,7 @@ import { getUser, removeUserSession } from "./Utils/Common";
 import { Nav, Navbar } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Logo from "./imgs/ic_launcher_round.png";
-
-
-
-
+import './resources/headers.css';
 
 function Headers(props) {
   const user = getUser();

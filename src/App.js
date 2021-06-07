@@ -3,8 +3,8 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import Login from './Login';
-import Dashboard from './components/Dashboard';
-import Dashboardqoe from './components/Dashboardqoe';
+import Dashboard from './stat/Dashboard';
+import Dashboardqoe from './stat/Dashboardqoe';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";

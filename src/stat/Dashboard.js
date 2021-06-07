@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getUser } from "../Utils/Common";
 import Headers from "../headers";
+import Footer from "../footer";
 import { useHistory } from "react-router-dom";
 import QosChartApp from "./QosChartApp";
 
@@ -12,15 +13,24 @@ function Dashboard(props) {
   };
   var [cart, setCart] = useState([<QosChartApp />]);
   return user ? (
-    <div>
-      <Headers />
-      <div className="container-fluid">
-      {cart}
-      <button className="btn btn-primary float-right row mt-4 mr-5" type="button" onClick={(e) => xx(e)}>
-        add new import
-      </button>
+    <>
+      {" "}
+      <div>
+        <Headers />
+        <div className="container-fluid">
+          {cart}
+          <button
+            className="btn btn-primary float-right row mt-4 mr-5"
+            type="button"
+            onClick={(e) => xx(e)}
+          >
+            add new import
+          </button>
+        </div>
+        <Footer />
       </div>
-    </div>
+      
+    </>
   ) : (
     history.push("/qosdashboard")
   );
