@@ -34,7 +34,9 @@ Please use files located under **measurement_files** folder .
 
 ## Installation and Setup Instructions
 
-Clone down this repository. You will need node and npm installed globally on your machine.
+Clone down the front & back repositories. 
+
+You will need node and npm installed globally on your machine.
 
 ### Installation:
 
