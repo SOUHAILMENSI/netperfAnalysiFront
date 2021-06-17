@@ -9,6 +9,9 @@ This project is currently in development,a **Beta version deployed on Heroku**
 ```bash
 https://netperf.herokuapp.com/login
 
+username = Manager@Ooredoo
+Password = 123456
+
 ```
 
 #### Test the application: 
