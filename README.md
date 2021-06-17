@@ -4,8 +4,7 @@ Netperf Analysis : It's an application used to analyse drive test measurement fi
 
 ## Project Status
 
-This project is currently in development;
-A Beta version deployed on **Heroku**
+This project is currently in development,a **Beta version deployed on Heroku**
 
 ```bash
 https://netperf.herokuapp.com/login
