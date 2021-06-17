@@ -7,6 +7,10 @@ import Card from "react-bootstrap/Card";
 
 function QosChartApp() {
   const [loading, setLoading] = useState(false);
+
+  const [selected, setSelected] = useState(false);
+  const [selectedFile, setSelectedFile] = useState();
+
   const [tabIndex, setTabIndex] = useState(0);
 
   let [ltechartDisplay, setLteChartDisplay] = useState([]);
@@ -63,9 +67,9 @@ function QosChartApp() {
     let array1 = [];
     let array2 = [];
     let objcounter = {};
-    let objcounter1 ={};
-    let objcounter2 ={};
-    
+    let objcounter1 = {};
+    let objcounter2 = {};
+
     for (let i = 0; i < list.length; i++) {
       // LTE calculation
 
@@ -77,29 +81,25 @@ function QosChartApp() {
             obj2[list[i]["CELL ID"]] + parseInt(list[i]["RSRP"]);
         } else {
           obj2[list[i]["CELL ID"]] = parseInt(list[i]["RSRP"]);
-          objcounter[list[i]["CELL ID"]]=1;
+          objcounter[list[i]["CELL ID"]] = 1;
         }
       }
 
       if (list[i]["System"] === "LTE" && list[i]["CELL ID"]) {
         if (obj3[list[i]["CELL ID"]]) {
-          
           obj3[list[i]["CELL ID"]] =
             obj3[list[i]["CELL ID"]] + parseInt(list[i]["RSRQ"]);
         } else {
           obj3[list[i]["CELL ID"]] = parseInt(list[i]["RSRQ"]);
-          
         }
       }
 
       if (list[i]["System"] === "LTE" && list[i]["CELL ID"]) {
         if (obj4[list[i]["CELL ID"]]) {
-          
           obj4[list[i]["CELL ID"]] =
             obj4[list[i]["CELL ID"]] + parseInt(list[i]["SINR"]);
         } else {
           obj4[list[i]["CELL ID"]] = parseInt(list[i]["SINR"]);
-         
         }
       }
 
@@ -108,7 +108,6 @@ function QosChartApp() {
           obj5[list[i]["Band"]]++;
         } else {
           obj5[list[i]["Band"]] = 1;
-
         }
       }
 
@@ -135,30 +134,26 @@ function QosChartApp() {
           objcounter1[list[i]["CELL ID"]]++;
 
           objUmts1[list[i]["CELL ID"]] =
-              objUmts1[list[i]["CELL ID"]] + parseInt(list[i]["RSCP"]);
+            objUmts1[list[i]["CELL ID"]] + parseInt(list[i]["RSCP"]);
         } else {
           objUmts1[list[i]["CELL ID"]] = parseInt(list[i]["RSCP"]);
-          objcounter1[list[i]["CELL ID"]]=1;
+          objcounter1[list[i]["CELL ID"]] = 1;
         }
       }
 
       if (list[i]["System"] === "UMTS" && list[i]["CELL ID"]) {
         if (objUmts2[list[i]["CELL ID"]]) {
-          
           objUmts2[list[i]["CELL ID"]] =
-            
-              objUmts2[list[i]["CELL ID"]] + parseInt(list[i]["EcN0"]);
+            objUmts2[list[i]["CELL ID"]] + parseInt(list[i]["EcN0"]);
         } else {
           objUmts2[list[i]["CELL ID"]] = parseInt(list[i]["EcN0"]);
-         
         }
       }
 
       if (list[i]["System"] === "UMTS" && list[i]["CELL ID"]) {
         if (objUmts3[list[i]["CELL ID"]]) {
           objUmts3[list[i]["CELL ID"]] =
-           
-              objUmts3[list[i]["CELL ID"]] + parseInt(list[i]["RSSI"]);
+            objUmts3[list[i]["CELL ID"]] + parseInt(list[i]["RSSI"]);
         } else {
           objUmts3[list[i]["CELL ID"]] = parseInt(list[i]["RSSI"]);
         }
@@ -194,11 +189,10 @@ function QosChartApp() {
         if (obj[list[i]["CELL ID"]]) {
           objcounter2[list[i]["CELL ID"]]++;
           obj[list[i]["CELL ID"]] =
-           
-              obj[list[i]["CELL ID"]] + parseInt(list[i]["Rx Level"]);
+            obj[list[i]["CELL ID"]] + parseInt(list[i]["Rx Level"]);
         } else {
           obj[list[i]["CELL ID"]] = parseInt(list[i]["Rx Level"]);
-          objcounter2[list[i]["CELL ID"]]=1;
+          objcounter2[list[i]["CELL ID"]] = 1;
         }
       }
 
@@ -232,7 +226,7 @@ function QosChartApp() {
     var value2 = [];
     Object.keys(obj2).forEach((x) => {
       head2.push(x);
-      value2.push(obj2[x]/objcounter[x]);
+      value2.push(obj2[x] / objcounter[x]);
     });
     setLteChartDisplay((prev) =>
       prev.concat({
@@ -248,7 +242,7 @@ function QosChartApp() {
     var value3 = [];
     Object.keys(obj3).forEach((x) => {
       head3.push(x);
-      value3.push(obj3[x]/objcounter[x]);
+      value3.push(obj3[x] / objcounter[x]);
     });
     setLteChartDisplay((prev) =>
       prev.concat({
@@ -264,7 +258,7 @@ function QosChartApp() {
     var value4 = [];
     Object.keys(obj4).forEach((x) => {
       head4.push(x);
-      value4.push(obj4[x]/objcounter[x]);
+      value4.push(obj4[x] / objcounter[x]);
     });
 
     setLteChartDisplay((prev) =>
@@ -333,7 +327,7 @@ function QosChartApp() {
     var valueUmts1 = [];
     Object.keys(objUmts1).forEach((x) => {
       headUmts1.push(x);
-      valueUmts1.push(objUmts1[x]/objcounter1[x]);
+      valueUmts1.push(objUmts1[x] / objcounter1[x]);
     });
 
     setUmtsChartDisplay((prev) =>
@@ -350,7 +344,7 @@ function QosChartApp() {
     var valueUmts2 = [];
     Object.keys(objUmts2).forEach((x) => {
       headUmts2.push(x);
-      valueUmts2.push(objUmts2[x]/objcounter1[x]);
+      valueUmts2.push(objUmts2[x] / objcounter1[x]);
     });
 
     setUmtsChartDisplay((prev) =>
@@ -367,7 +361,7 @@ function QosChartApp() {
     var valueUmts3 = [];
     Object.keys(objUmts3).forEach((x) => {
       headUmts3.push(x);
-      valueUmts3.push(objUmts3[x]/objcounter1[x]);
+      valueUmts3.push(objUmts3[x] / objcounter1[x]);
     });
 
     setUmtsChartDisplay((prev) =>
@@ -436,7 +430,7 @@ function QosChartApp() {
     var value = [];
     Object.keys(obj).forEach((x) => {
       head.push(x);
-      value.push(obj[x]/objcounter2[x]);
+      value.push(obj[x] / objcounter2[x]);
     });
 
     setGsmChartDisplay((prev) =>
@@ -516,6 +510,9 @@ function QosChartApp() {
       processData(data);
     };
     reader.readAsBinaryString(file);
+
+    setSelected(true);
+    setSelectedFile(e.target.files[0]);
   };
 
   const displayLTE = () => {
@@ -527,7 +524,12 @@ function QosChartApp() {
             <Card>
               <Card.Body>
                 <Card.Text>
-                  {loading && ltechartDisplay[i]["loading"] ? (
+                  {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("CellMeans") &&
+                  ltechartDisplay[i]["loading"] ? (
                     <Appc
                       head={ltechartDisplay[i]["head"]}
                       value={ltechartDisplay[i]["value"]}
@@ -548,6 +550,10 @@ function QosChartApp() {
               <Card.Body>
                 <Card.Text>
                   {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("CellMeans") &&
                   ltechartDisplay[i + 1] &&
                   ltechartDisplay[i + 1]["loading"] ? (
                     <Appc
@@ -580,7 +586,12 @@ function QosChartApp() {
             <Card>
               <Card.Body>
                 <Card.Text>
-                  {loading && umtschartDisplay[i]["loading"] ? (
+                  {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("CellMeans") &&
+                  umtschartDisplay[i]["loading"] ? (
                     <Appc
                       head={umtschartDisplay[i]["head"]}
                       value={umtschartDisplay[i]["value"]}
@@ -601,6 +612,10 @@ function QosChartApp() {
               <Card.Body>
                 <Card.Text>
                   {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("CellMeans") &&
                   umtschartDisplay[i + 1] &&
                   umtschartDisplay[i + 1]["loading"] ? (
                     <Appc
@@ -633,7 +648,12 @@ function QosChartApp() {
             <Card>
               <Card.Body>
                 <Card.Text>
-                  {loading && gsmchartDisplay[i]["loading"] ? (
+                  {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("CellMeans") &&
+                  gsmchartDisplay[i]["loading"] ? (
                     <Appc
                       head={gsmchartDisplay[i]["head"]}
                       value={gsmchartDisplay[i]["value"]}
@@ -654,6 +674,10 @@ function QosChartApp() {
               <Card.Body>
                 <Card.Text>
                   {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("CellMeans") &&
                   gsmchartDisplay[i + 1] &&
                   gsmchartDisplay[i + 1]["loading"] ? (
                     <Appc
@@ -687,15 +711,31 @@ function QosChartApp() {
                   <input
                     type="file"
                     className="custom-file-input"
-                    accept=".csv"
+                    accept=".npmf"
                     onChange={handleFileUpload}
                     id="inputGroupFile"
                   />
                   <label className="custom-file-label" for="inputGroupFile">
-                    Upload measurement file here
+                    {selected
+                      ? selectedFile.name.split(".").slice(0, -1).join(".")
+                      : "Upload measurement file here"}
                   </label>
                 </div>
               </div>
+            </div>
+            <div style={{ display: selected ? "block" : "none" }}>
+              {selected &&
+              String(
+                selectedFile.name.split(".").slice(0, -1).join(".")
+              ).includes("CellMeans") ? (
+                <p style={{ color: "green", fontWeight: "bold" }}>
+                  Measurement file Imported
+                </p>
+              ) : (
+                <p style={{ color: "red", fontWeight: "bold" }}>
+                  Make sure to import the right measurement file
+                </p>
+              )}
             </div>
           </div>
         </div>

@@ -7,6 +7,9 @@ import Card from "react-bootstrap/Card";
 
 function QoeChartApp() {
   const [loading, setLoading] = useState(false);
+  const [selected, setSelected] = useState(false);
+  const [selectedFile, setSelectedFile] = useState();
+
   const [tabIndex, setTabIndex] = useState(0);
 
   let [browsingchartDisplay, setBrowsingChartDisplay] = useState([]);
@@ -96,7 +99,7 @@ function QoeChartApp() {
             obj5[list[i]["Host"]] + parseInt(list[i]["Page load time"]);
         } else {
           obj5[list[i]["Host"]] = parseInt(list[i]["Page load time"]);
-          objcounter[list[i]["Host"]] =1;
+          objcounter[list[i]["Host"]] = 1;
         }
       }
 
@@ -159,8 +162,7 @@ function QoeChartApp() {
       if (list[i]["Service"] === "HTTP transfert") {
         if (obj1[list[i]["Service"]]) {
           obj1[list[i]["Service"]] =
-            obj1[list[i]["Service"]] +
-            parseInt(list[i]["Avg throughput"]);
+            obj1[list[i]["Service"]] + parseInt(list[i]["Avg throughput"]);
         } else {
           obj1[list[i]["Service"]] = parseInt(list[i]["Avg throughput"]);
         }
@@ -267,7 +269,7 @@ function QoeChartApp() {
     setYoutubeChartDisplay((prev) =>
       prev.concat({
         head: ["Streaming"],
-        value: [objyoutube2[["Streaming"]]/objyoutube1[["Streaming"]]],
+        value: [objyoutube2[["Streaming"]] / objyoutube1[["Streaming"]]],
         bar: true,
         label: "Time to 1st pict [Avg]",
         loading: true,
@@ -277,7 +279,7 @@ function QoeChartApp() {
     setYoutubeChartDisplay((prev) =>
       prev.concat({
         head: ["Streaming"],
-        value: [objyoutube3[["Streaming"]]/objyoutube1[["Streaming"]]],
+        value: [objyoutube3[["Streaming"]] / objyoutube1[["Streaming"]]],
         bar: true,
         label: "Video load delay [Avg]",
         loading: true,
@@ -287,7 +289,7 @@ function QoeChartApp() {
     setYoutubeChartDisplay((prev) =>
       prev.concat({
         head: ["Streaming"],
-        value: [objyoutube4[["Streaming"]]/objyoutube1[["Streaming"]]],
+        value: [objyoutube4[["Streaming"]] / objyoutube1[["Streaming"]]],
         bar: true,
         label: "Video Start delay [Avg]",
         loading: true,
@@ -322,7 +324,7 @@ function QoeChartApp() {
     setSpeedChartDisplay((prev) =>
       prev.concat({
         head: ["HTTP transfert"],
-        value: [obj1[["HTTP transfert"]]/obj[["HTTP transfert"]]],
+        value: [obj1[["HTTP transfert"]] / obj[["HTTP transfert"]]],
         bar: true,
         label: "Application Throughput [Avg]",
         loading: true,
@@ -379,6 +381,9 @@ function QoeChartApp() {
       processData(data);
     };
     reader.readAsBinaryString(file);
+
+    setSelected(true);
+    setSelectedFile(e.target.files[0]);
   };
 
   const displayBrowsing = () => {
@@ -390,7 +395,12 @@ function QoeChartApp() {
             <Card>
               <Card.Body>
                 <Card.Text>
-                  {loading && browsingchartDisplay[i]["loading"] ? (
+                  {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("PerfMeans") &&
+                  browsingchartDisplay[i]["loading"] ? (
                     <Appc
                       head={browsingchartDisplay[i]["head"]}
                       value={browsingchartDisplay[i]["value"]}
@@ -411,6 +421,10 @@ function QoeChartApp() {
               <Card.Body>
                 <Card.Text>
                   {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("PerfMeans") &&
                   browsingchartDisplay[i + 1] &&
                   browsingchartDisplay[i + 1]["loading"] ? (
                     <Appc
@@ -443,7 +457,12 @@ function QoeChartApp() {
             <Card>
               <Card.Body>
                 <Card.Text>
-                  {loading && youtubechartDisplay[i]["loading"] ? (
+                  {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("PerfMeans") &&
+                  youtubechartDisplay[i]["loading"] ? (
                     <Appc
                       head={youtubechartDisplay[i]["head"]}
                       value={youtubechartDisplay[i]["value"]}
@@ -464,6 +483,10 @@ function QoeChartApp() {
               <Card.Body>
                 <Card.Text>
                   {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("PerfMeans") &&
                   youtubechartDisplay[i + 1] &&
                   youtubechartDisplay[i + 1]["loading"] ? (
                     <Appc
@@ -496,7 +519,12 @@ function QoeChartApp() {
             <Card>
               <Card.Body>
                 <Card.Text>
-                  {loading && speedchartDisplay[i]["loading"] ? (
+                  {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("PerfMeans") &&
+                  speedchartDisplay[i]["loading"] ? (
                     <Appc
                       head={speedchartDisplay[i]["head"]}
                       value={speedchartDisplay[i]["value"]}
@@ -517,6 +545,10 @@ function QoeChartApp() {
               <Card.Body>
                 <Card.Text>
                   {loading &&
+                  selected &&
+                  String(
+                    selectedFile.name.split(".").slice(0, -1).join(".")
+                  ).includes("PerfMeans") &&
                   speedchartDisplay[i + 1] &&
                   speedchartDisplay[i + 1]["loading"] ? (
                     <Appc
@@ -539,52 +571,71 @@ function QoeChartApp() {
     }
     return x;
   };
+
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <div className="position-relative m-5">
-            <div className="input-group mb-3">
-              <div className="input-group">
-                <div className="custom-file">
-                  <input
-                    type="file"
-                    className="custom-file-input"
-                    accept=".csv"
-                    onChange={handleFileUpload}
-                    id="inputGroupFile"
-                  />
-                  <label className="custom-file-label" for="inputGroupFile">
-                    Upload measurement file here
-                  </label>
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="position-relative m-5">
+              <div className="input-group mb-3">
+                <div className="input-group">
+                  <div className="custom-file">
+                    <input
+                      type="file"
+                      className="custom-file-input"
+                      accept=".npmf"
+                      onChange={handleFileUpload}
+                      id="inputGroupFile"
+                    />
+                    <label className="custom-file-label" for="inputGroupFile">
+                      {selected
+                        ? selectedFile.name.split(".").slice(0, -1).join(".")
+                        : "Upload measurement file here"}
+                    </label>
+                  </div>
                 </div>
+              </div>
+              <div style={{ display: selected ? "block" : "none" }}>
+                {selected &&
+                String(
+                  selectedFile.name.split(".").slice(0, -1).join(".")
+                ).includes("PerfMeans") ? (
+                  <p style={{ color: "green", fontWeight: "bold" }}>
+                    Measurement file Imported
+                  </p>
+                ) : (
+                  <p style={{ color: "red", fontWeight: "bold" }}>
+                    Make sure to import the right measurement file
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="container">
+            <div className="row">
+              <div className="col">
+                <Tabs
+                  id="controlled-tab-example"
+                  selectedIndex={tabIndex}
+                  onSelect={(k) => setTabIndex(k)}
+                >
+                  <Tab eventKey="browsing" title="Browsing">
+                    {displayBrowsing()}
+                  </Tab>
+                  <Tab eventKey="youtube" title="Streaming">
+                    {displayYoutube()}
+                  </Tab>
+                  <Tab eventKey="throughput" title="Application Throughput">
+                    {displaySpeed()}
+                  </Tab>
+                </Tabs>
               </div>
             </div>
           </div>
         </div>
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <Tabs
-                id="controlled-tab-example"
-                selectedIndex={tabIndex}
-                onSelect={(k) => setTabIndex(k)}
-              >
-                <Tab eventKey="browsing" title="Browsing">
-                  {displayBrowsing()}
-                </Tab>
-                <Tab eventKey="youtube" title="Streaming">
-                  {displayYoutube()}
-                </Tab>
-                <Tab eventKey="throughput" title="Application Throughput">
-                  {displaySpeed()}
-                </Tab>
-              </Tabs>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+    </>
   );
 }
 
