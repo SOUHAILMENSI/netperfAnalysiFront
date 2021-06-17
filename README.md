@@ -10,11 +10,10 @@ This project is currently in development.
 
 ## Project Screen Shot(s)
 
-[ ![login page ](./screenshot/img1.png) ]
+![login page ](./screenshot/img1.png)
 
-[ ![Radio technology parameters analysis ](./screenshot/img2.png) ]
-
-[ ![Data services KPI analysis ](./screenshot/img3.png) ]
+![Radio technology parameters analysis ](./screenshot/img2.png) 
+![Data services KPI analysis ](./screenshot/img3.png)
 
 ## Installation and Setup Instructions
 
