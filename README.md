@@ -11,6 +11,9 @@ A Beta version deployed on **Heroku**
 https://netperf.herokuapp.com/login
 
 ```
+
+Please use files located under **measurement_files** to Test the application.
+
 ## Project Screen Shot(s)
 #### 1- Login page :
 

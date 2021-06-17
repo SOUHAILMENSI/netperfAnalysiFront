@@ -1,0 +1,122 @@
+Date;Time;IMEI;IMSI;Operator;Service;Host;URL;Content size;Page load time;Redirection;Video ID;Time to 1st picture;Video load delay;Video start delay;Buffering count;Protocol;Port;Request code;Status;Server time to connect;File Size;Download time;Avg throughput
+25/03/2021;21:43:27;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;439086;5299;88;;;;;;;;;;;;;
+25/03/2021;21:43:31;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;431818;2289;80;;;;;;;;;;;;;
+25/03/2021;21:43:36;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438878;1834;75;;;;;;;;;;;;;
+25/03/2021;21:43:40;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438954;2587;82;;;;;;;;;;;;;
+25/03/2021;21:43:46;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438914;2558;80;;;;;;;;;;;;;
+25/03/2021;21:43:50;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438955;2472;80;;;;;;;;;;;;;
+25/03/2021;21:43:54;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438915;2309;80;;;;;;;;;;;;;
+25/03/2021;21:43:59;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;343483;2344;79;;;;;;;;;;;;;
+25/03/2021;21:44:01;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;445839;2503;81;;;;;;;;;;;;;
+25/03/2021;21:44:04;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;439516;2415;80;;;;;;;;;;;;;
+25/03/2021;21:44:07;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438881;2184;80;;;;;;;;;;;;;
+25/03/2021;21:44:11;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438957;2291;80;;;;;;;;;;;;;
+25/03/2021;21:44:15;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438881;2221;80;;;;;;;;;;;;;
+25/03/2021;21:44:18;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438916;2467;80;;;;;;;;;;;;;
+25/03/2021;21:44:21;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438879;2358;81;;;;;;;;;;;;;
+25/03/2021;21:44:25;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438950;2557;82;;;;;;;;;;;;;
+25/03/2021;21:44:28;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;439484;2315;80;;;;;;;;;;;;;
+25/03/2021;21:44:32;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438915;2287;80;;;;;;;;;;;;;
+25/03/2021;21:44:35;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438915;2362;80;;;;;;;;;;;;;
+25/03/2021;21:44:38;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438881;2241;80;;;;;;;;;;;;;
+25/03/2021;21:44:42;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438880;2327;80;;;;;;;;;;;;;
+25/03/2021;21:44:45;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438921;2322;82;;;;;;;;;;;;;
+25/03/2021;21:44:50;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438914;2545;80;;;;;;;;;;;;;
+25/03/2021;21:44:55;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438879;2397;80;;;;;;;;;;;;;
+25/03/2021;21:45:01;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;CNN;https://edition.cnn.com/;438878;2478;81;;;;;;;;;;;;;
+25/03/2021;21:45:03;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;38026;1104;37;;;;;;;;;;;;;
+25/03/2021;21:45:05;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37832;656;34;;;;;;;;;;;;;
+25/03/2021;21:45:07;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37829;654;34;;;;;;;;;;;;;
+25/03/2021;21:45:08;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37828;694;34;;;;;;;;;;;;;
+25/03/2021;21:45:10;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37829;667;35;;;;;;;;;;;;;
+25/03/2021;21:45:11;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37826;663;35;;;;;;;;;;;;;
+25/03/2021;21:45:12;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37826;721;33;;;;;;;;;;;;;
+25/03/2021;21:45:14;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37825;660;35;;;;;;;;;;;;;
+25/03/2021;21:45:15;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37821;614;34;;;;;;;;;;;;;
+25/03/2021;21:45:17;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37821;709;34;;;;;;;;;;;;;
+25/03/2021;21:45:19;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37822;742;34;;;;;;;;;;;;;
+25/03/2021;21:45:21;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37822;707;34;;;;;;;;;;;;;
+25/03/2021;21:45:23;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37829;626;34;;;;;;;;;;;;;
+25/03/2021;21:45:25;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37823;678;34;;;;;;;;;;;;;
+25/03/2021;21:45:27;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37828;626;34;;;;;;;;;;;;;
+25/03/2021;21:45:30;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37826;1113;34;;;;;;;;;;;;;
+25/03/2021;21:45:32;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37820;680;33;;;;;;;;;;;;;
+25/03/2021;21:45:34;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37827;656;34;;;;;;;;;;;;;
+25/03/2021;21:45:35;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37826;621;34;;;;;;;;;;;;;
+25/03/2021;21:45:37;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37832;661;34;;;;;;;;;;;;;
+25/03/2021;21:45:40;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37829;651;34;;;;;;;;;;;;;
+25/03/2021;21:45:44;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37828;597;34;;;;;;;;;;;;;
+25/03/2021;21:45:47;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37829;599;34;;;;;;;;;;;;;
+25/03/2021;21:45:51;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37824;671;34;;;;;;;;;;;;;
+25/03/2021;21:45:56;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37829;654;35;;;;;;;;;;;;;
+25/03/2021;21:45:59;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Facebook;https://m.facebook.com/;37826;623;34;;;;;;;;;;;;;
+25/03/2021;21:46:02;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;796547;690;12;;;;;;;;;;;;;
+25/03/2021;21:46:02;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;1086315;1254;33;;;;;;;;;;;;;
+25/03/2021;21:46:04;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;1077066;900;32;;;;;;;;;;;;;
+25/03/2021;21:46:07;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;1077066;836;32;;;;;;;;;;;;;
+25/03/2021;21:46:09;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;1077066;783;32;;;;;;;;;;;;;
+25/03/2021;21:46:11;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;1077066;839;32;;;;;;;;;;;;;
+25/03/2021;21:46:13;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;796547;466;15;;;;;;;;;;;;;
+25/03/2021;21:46:18;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;909540;763;32;;;;;;;;;;;;;
+25/03/2021;21:46:20;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;1078475;887;32;;;;;;;;;;;;;
+25/03/2021;21:46:23;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;1077066;817;32;;;;;;;;;;;;;
+25/03/2021;21:46:25;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;796547;506;15;;;;;;;;;;;;;
+25/03/2021;21:46:38;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;899741;674;15;;;;;;;;;;;;;
+25/03/2021;21:46:40;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;899741;468;15;;;;;;;;;;;;;
+25/03/2021;21:46:42;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Google;https://www.google.com/;796547;450;15;;;;;;;;;;;;;
+25/03/2021;21:46:48;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;3552719;3414;76;;;;;;;;;;;;;
+25/03/2021;21:46:52;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;6914286;3427;76;;;;;;;;;;;;;
+25/03/2021;21:46:56;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;1306979;2740;76;;;;;;;;;;;;;
+25/03/2021;21:47:01;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;4006419;3529;76;;;;;;;;;;;;;
+25/03/2021;21:47:06;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;3389816;3176;76;;;;;;;;;;;;;
+25/03/2021;21:47:10;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;5680434;3075;76;;;;;;;;;;;;;
+25/03/2021;21:47:15;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;6586000;4029;76;;;;;;;;;;;;;
+25/03/2021;21:47:20;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;6575708;3747;76;;;;;;;;;;;;;
+25/03/2021;21:47:25;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;6322318;4313;76;;;;;;;;;;;;;
+25/03/2021;21:47:30;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Tunisianet;https://www.tunisianet.com.tn/;6369541;3659;76;;;;;;;;;;;;;
+25/03/2021;21:47:36;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;984860;1399;39;;;;;;;;;;;;;
+25/03/2021;21:47:39;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1571251;2084;60;;;;;;;;;;;;;
+25/03/2021;21:47:42;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1484582;1927;61;;;;;;;;;;;;;
+25/03/2021;21:47:45;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1471715;1269;51;;;;;;;;;;;;;
+25/03/2021;21:47:48;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;970557;1065;46;;;;;;;;;;;;;
+25/03/2021;21:47:51;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1466661;1304;49;;;;;;;;;;;;;
+25/03/2021;21:47:53;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1466661;1208;49;;;;;;;;;;;;;
+25/03/2021;21:47:57;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1471717;1209;51;;;;;;;;;;;;;
+25/03/2021;21:48:04;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1471716;1297;51;;;;;;;;;;;;;
+25/03/2021;21:48:10;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1472134;1368;51;;;;;;;;;;;;;
+25/03/2021;21:48:13;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1472134;1344;51;;;;;;;;;;;;;
+25/03/2021;21:48:16;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1472133;1212;51;;;;;;;;;;;;;
+25/03/2021;21:48:20;3,53E+14;6,05E+14;Ooredoo TN;HTTP browsing;Mosaiquefm;https://www.mosaiquefm.net/amp/fr/;1472134;1173;51;;;;;;;;;;;;;
+25/03/2021;21:48:33;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;62;630;648;2;;;;;;;;
+25/03/2021;21:48:40;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;7;244;264;2;;;;;;;;
+25/03/2021;21:48:47;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;8;235;252;2;;;;;;;;
+25/03/2021;21:48:54;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;268;273;2;;;;;;;;
+25/03/2021;21:49:01;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;7;308;313;2;;;;;;;;
+25/03/2021;21:49:08;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;7;241;260;2;;;;;;;;
+25/03/2021;21:49:17;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;249;267;2;;;;;;;;
+25/03/2021;21:49:28;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;228;242;2;;;;;;;;
+25/03/2021;21:49:35;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;264;266;2;;;;;;;;
+25/03/2021;21:49:41;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;268;284;2;;;;;;;;
+25/03/2021;21:49:47;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;7;249;267;2;;;;;;;;
+25/03/2021;21:49:55;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;7;235;237;2;;;;;;;;
+25/03/2021;21:50:02;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;7;258;276;2;;;;;;;;
+25/03/2021;21:50:09;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;7;243;256;2;;;;;;;;
+25/03/2021;21:50:17;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;232;248;2;;;;;;;;
+25/03/2021;21:50:24;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;323;329;2;;;;;;;;
+25/03/2021;21:50:33;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;324;341;2;;;;;;;;
+25/03/2021;21:50:46;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;8;238;240;2;;;;;;;;
+25/03/2021;21:50:53;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;247;267;2;;;;;;;;
+25/03/2021;21:51:05;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;312;313;2;;;;;;;;
+25/03/2021;21:51:13;3,53E+14;6,05E+14;Ooredoo TN;Streaming;;;;;;F7mKD2Un65I;6;238;255;2;;;;;;;;
+25/03/2021;21:51:43;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;OK;121;100;26;30.768
+25/03/2021;21:52:00;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;OK;1;50;15;26.664
+25/03/2021;21:52:33;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;OK;0;50;14;28.568
+25/03/2021;21:52:52;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;OK;1;50;11;36.36
+25/03/2021;21:53:06;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;NOK;0;50;13;30.768
+25/03/2021;21:53:20;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;NOK;1;50;13;30.768
+25/03/2021;21:53:40;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;NOK;0;50;13;30.768
+25/03/2021;21:54:00;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;NOK;1;50;11;36.36
+25/03/2021;21:54:14;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;NOK;1;50;12;33.328
+25/03/2021;21:54:29;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;OK;1;50;12;33.328
+25/03/2021;21:54:43;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;OK;0;50;12;33.328
+25/03/2021;21:55:00;3,53E+14;6,05E+14;Ooredoo TN;HTTP transfert;aix-marseille.testdebit.info;;;;;;;;;;http;80;200;OK;1;50;9;44.44
