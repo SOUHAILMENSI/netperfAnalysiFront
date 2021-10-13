@@ -9,16 +9,10 @@ function Footer() {
         <div className="row" >
           <p className="col-sm">
             
-            Copyright &copy;{new Date().getFullYear()}  <h  className="font-weight-bold">Ooredoo Tunisie.</h>
+            Copyright &copy;{new Date().getFullYear()}  <h  className="font-weight-bold">Tunisie.</h>
              {" "}All right reserved
           </p>
-          <img
-              alt=""
-              src={LogoTn}
-              width="125"
-              height="75"
-              className="map img-resonsive"
-            />
+          
         </div>
       </div>
     </div>
